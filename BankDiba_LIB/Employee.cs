@@ -47,5 +47,36 @@ namespace BankDiba_LIB
         public DateTime TglBuat { get => tglBuat; set => tglBuat = value; }
         public DateTime TglPerubahan { get => tglPerubahan; set => tglPerubahan = value; }
         #endregion
+
+        #region Methods
+        public static List<Employee> BacaData(string kriteria, string nilaiKriteria)
+        {
+            string sql = "";
+            if (kriteria == "")
+            {
+                sql = $"select E.KodeEmployee, E.Nama, E.TglLahir, E.Alamat, E.Gaji, E.Username, E.Password" +
+                      $"P.id, P.nama AS Positions from Employee E inner join Positions P on E.position_id = P.id";
+            }
+            else
+            {
+                sql = $"select E.KodeEmployee, E.Nama, E.TglLahir, E.Alamat, E.Gaji, E.Username, E.Password" +
+                      $"P.id, P.nama AS Positions from Employee E inner join Positions P on E.position_id = P.id" +
+                      $"where {kriteria} LIKE '%{nilaiKriteria}%'";
+            }
+            // ------
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            List<Employee> listEmployee = new List<Employee>();
+            while (hasil.Read() == true)
+            {
+                Positions P = new Positions((int)hasil.GetValue(0), hasil.GetString(1), hasil.GetString(2));
+                Employee E = new Employee(int.Parse(hasil.GetString(0)), hasil.GetString(1), hasil.GetString(2),
+                                           P,                 hasil.GetString(4), hasil.GetString(5), 
+                                           hasil.GetString(6), hasil.GetDateTime(7), hasil.GetDateTime(8));
+                listEmployee.Add(E);
+            }
+            return listEmployee;
+        }
+        #endregion
     }
 }

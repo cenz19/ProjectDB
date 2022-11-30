@@ -58,6 +58,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>db.settings</DependentUpon>
     </Compile>
+    <Compile Include="FormDaftarEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarEmployee.Designer.cs">
+      <DependentUpon>FormDaftarEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDaftarJenisPosisi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     <Compile Include="FormDaftarPengguna.Designer.cs">
       <DependentUpon>FormDaftarPengguna.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTambahEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahEmployee.Designer.cs">
+      <DependentUpon>FormTambahEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTambahJenisPosisi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +105,12 @@
     </Compile>
     <Compile Include="FormTambahPengguna.Designer.cs">
       <DependentUpon>FormTambahPengguna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUbahEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahEmployee.Designer.cs">
+      <DependentUpon>FormUbahEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUbahJenisPosisi.cs">
       <SubType>Form</SubType>
@@ -144,6 +162,9 @@
     <Compile Include="TransferForm.Designer.cs">
       <DependentUpon>TransferForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormDaftarEmployee.resx">
+      <DependentUpon>FormDaftarEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarJenisPosisi.resx">
       <DependentUpon>FormDaftarJenisPosisi.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +174,9 @@
     <EmbeddedResource Include="FormDaftarPengguna.resx">
       <DependentUpon>FormDaftarPengguna.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahEmployee.resx">
+      <DependentUpon>FormTambahEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTambahJenisPosisi.resx">
       <DependentUpon>FormTambahJenisPosisi.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTambahPengguna.resx">
       <DependentUpon>FormTambahPengguna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahEmployee.resx">
+      <DependentUpon>FormUbahEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUbahJenisPosisi.resx">
       <DependentUpon>FormUbahJenisPosisi.cs</DependentUpon>
