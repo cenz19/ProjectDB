@@ -1,0 +1,23 @@
+D:\SEMESTER 3\DATA BASE KP B\UAS\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.AssemblyReference.cache
+D:\SEMESTER 3\DATA BASE KP B\UAS\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.CoreCompileInputs.cache
+D:\SEMESTER 3\DATA BASE KP B\UAS\BankDiba_LIB\bin\Debug\BankDiba_LIB.dll
+D:\SEMESTER 3\DATA BASE KP B\UAS\BankDiba_LIB\bin\Debug\BankDiba_LIB.pdb
+D:\SEMESTER 3\DATA BASE KP B\UAS\BankDiba_LIB\bin\Debug\MySql.Data.dll
+D:\SEMESTER 3\DATA BASE KP B\UAS\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.CopyComplete
+D:\SEMESTER 3\DATA BASE KP B\UAS\BankDiba_LIB\obj\Debug\BankDiba_LIB.dll
+D:\SEMESTER 3\DATA BASE KP B\UAS\BankDiba_LIB\obj\Debug\BankDiba_LIB.pdb
+D:\Download\DL\BankDiba\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.AssemblyReference.cache
+D:\Download\DL\BankDiba\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.CoreCompileInputs.cache
+D:\Download\DL\BankDiba\BankDiba_LIB\obj\Debug\BankDiba_LIB.dll
+D:\Download\DL\BankDiba\BankDiba_LIB\obj\Debug\BankDiba_LIB.pdb
+D:\Download\DL\BankDiba\BankDiba_LIB\bin\Debug\BankDiba_LIB.dll
+D:\Download\DL\BankDiba\BankDiba_LIB\bin\Debug\BankDiba_LIB.pdb
+D:\Download\DL\BankDiba\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.CopyComplete
+C:\Users\Vincent\Downloads\BankDiba\BankDiba_LIB\bin\Debug\BankDiba_LIB.dll
+C:\Users\Vincent\Downloads\BankDiba\BankDiba_LIB\bin\Debug\BankDiba_LIB.pdb
+C:\Users\Vincent\Downloads\BankDiba\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.CoreCompileInputs.cache
+C:\Users\Vincent\Downloads\BankDiba\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.CopyComplete
+C:\Users\Vincent\Downloads\BankDiba\BankDiba_LIB\obj\Debug\BankDiba_LIB.dll
+C:\Users\Vincent\Downloads\BankDiba\BankDiba_LIB\obj\Debug\BankDiba_LIB.pdb
+C:\Users\Vincent\Downloads\BankDiba\BankDiba_LIB\bin\Debug\MySql.Data.dll
+C:\Users\Vincent\Downloads\BankDiba\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.AssemblyReference.cache
