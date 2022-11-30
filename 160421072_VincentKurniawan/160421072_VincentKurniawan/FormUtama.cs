@@ -101,5 +101,10 @@ namespace _160421072_VincentKurniawan
                 form.BringToFront();
             }
         }
+
+        private void inboxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

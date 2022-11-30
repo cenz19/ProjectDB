@@ -37,10 +37,11 @@ namespace _160421072_VincentKurniawan
             this.akunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.penggunaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.karyawanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.posisiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jenisTransaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.posisiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keluarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,7 +98,8 @@ namespace _160421072_VincentKurniawan
             // 
             this.akunToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.penggunaToolStripMenuItem,
-            this.karyawanToolStripMenuItem});
+            this.karyawanToolStripMenuItem,
+            this.inboxToolStripMenuItem});
             this.akunToolStripMenuItem.Name = "akunToolStripMenuItem";
             this.akunToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
             this.akunToolStripMenuItem.Text = "Akun";
@@ -117,6 +119,13 @@ namespace _160421072_VincentKurniawan
             this.karyawanToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.karyawanToolStripMenuItem.Text = "Karyawan";
             // 
+            // posisiToolStripMenuItem
+            // 
+            this.posisiToolStripMenuItem.Name = "posisiToolStripMenuItem";
+            this.posisiToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
+            this.posisiToolStripMenuItem.Text = "Posisi";
+            this.posisiToolStripMenuItem.Click += new System.EventHandler(this.posisiToolStripMenuItem_Click);
+            // 
             // transaksiToolStripMenuItem
             // 
             this.transaksiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -128,16 +137,9 @@ namespace _160421072_VincentKurniawan
             // jenisTransaksiToolStripMenuItem
             // 
             this.jenisTransaksiToolStripMenuItem.Name = "jenisTransaksiToolStripMenuItem";
-            this.jenisTransaksiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.jenisTransaksiToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.jenisTransaksiToolStripMenuItem.Text = "Jenis Transaksi";
             this.jenisTransaksiToolStripMenuItem.Click += new System.EventHandler(this.jenisTransaksiToolStripMenuItem_Click);
-            // 
-            // posisiToolStripMenuItem
-            // 
-            this.posisiToolStripMenuItem.Name = "posisiToolStripMenuItem";
-            this.posisiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.posisiToolStripMenuItem.Text = "Posisi";
-            this.posisiToolStripMenuItem.Click += new System.EventHandler(this.posisiToolStripMenuItem_Click);
             // 
             // keluarToolStripMenuItem
             // 
@@ -145,6 +147,13 @@ namespace _160421072_VincentKurniawan
             this.keluarToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.keluarToolStripMenuItem.Text = "Keluar";
             this.keluarToolStripMenuItem.Click += new System.EventHandler(this.keluarToolStripMenuItem_Click);
+            // 
+            // inboxToolStripMenuItem
+            // 
+            this.inboxToolStripMenuItem.Name = "inboxToolStripMenuItem";
+            this.inboxToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.inboxToolStripMenuItem.Text = "Inbox";
+            this.inboxToolStripMenuItem.Click += new System.EventHandler(this.inboxToolStripMenuItem_Click);
             // 
             // FormUtama
             // 
@@ -179,6 +188,7 @@ namespace _160421072_VincentKurniawan
         private System.Windows.Forms.ToolStripMenuItem jenisTransaksiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem posisiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keluarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inboxToolStripMenuItem;
     }
 }
 

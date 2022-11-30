@@ -64,6 +64,12 @@
     <Compile Include="FormDaftarEmployee.Designer.cs">
       <DependentUpon>FormDaftarEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormdaftarInbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormdaftarInbox.Designer.cs">
+      <DependentUpon>FormdaftarInbox.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDaftarJenisPosisi.cs">
       <SubType>Form</SubType>
     </Compile>

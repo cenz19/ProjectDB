@@ -10,7 +10,7 @@ namespace BankDiba_LIB
     {
         #region DataMembers
         private Pengguna pengguna;
-        private int idPesan;
+        private string idPesan;
         private string pesan;
         private DateTime tanggalKirim;
         private string status;
@@ -18,7 +18,7 @@ namespace BankDiba_LIB
         #endregion
 
         #region Consturctors
-        public Inbox(Pengguna pengguna, int idPesan, string pesan, string status)
+        public Inbox(string idPesan, Pengguna pengguna, string pesan, string status)
         {
             Pengguna = pengguna;
             IdPesan = idPesan;
@@ -27,11 +27,20 @@ namespace BankDiba_LIB
             Status = status;
             TglPerubahan = DateTime.Now;
         }
+        public Inbox(string idPesan, Pengguna pengguna, string pesan, DateTime tglKirim, string status, DateTime tglPerubahan)
+        {
+            Pengguna = pengguna;
+            IdPesan = idPesan;
+            Pesan = pesan;
+            TanggalKirim = tglKirim;
+            Status = status;
+            TglPerubahan = tglPerubahan;
+        }
         #endregion
 
         #region Properties
+        public string IdPesan { get => idPesan; set => idPesan = value; }
         public Pengguna Pengguna { get => pengguna; set => pengguna = value; }
-        public int IdPesan { get => idPesan; set => idPesan = value; }
         public string Pesan { get => pesan; set => pesan = value; }
         public DateTime TanggalKirim { get => tanggalKirim; set => tanggalKirim = value; }
         public string Status { get => status; set => status = value; }
@@ -44,17 +53,19 @@ namespace BankDiba_LIB
             string sql = "";
             if(kriteria == "")
             {
-                sql = "select * from inbox";
+                sql = "select i.*, p.*, s.* from pengguna as p left join inbox as i on p.nik = i.id_pengguna left join security_question as s on s.id = p.security_question_id";
             }
             else
             {
-                sql = "select * from inbox where " + kriteria + " = '" + nilai + "'";
+                sql = "select i.*, p.*, s.* from pengguna as p left join inbox as i on p.nik = i.id_pengguna left join security_question as s on s.id = p.security_question_id where i." + kriteria + " = '" + nilai + "'";
             }
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             List<Inbox> listInbox = new List<Inbox>();
             while (hasil.Read())
             {
-                Inbox i = new Inbox((Pengguna)hasil.GetValue(0), hasil.GetInt16(1), hasil.GetString(2), hasil.GetString(3));
+                SecurityQuestion s = new SecurityQuestion(hasil.GetInt16(18), hasil.GetString(19));
+                Pengguna p = new Pengguna(hasil.GetString(6), hasil.GetString(7), hasil.GetString(8), hasil.GetString(9), hasil.GetString(10), hasil.GetString(11), hasil.GetString(12), hasil.GetString(13), hasil.GetDateTime(14), hasil.GetDateTime(15), s, hasil.GetString(17));
+                Inbox i = new Inbox(hasil.GetString(0), p, hasil.GetString(2), hasil.GetDateTime(3), hasil.GetString(4), hasil.GetDateTime(5));
                 listInbox.Add(i);
             }
             return listInbox;
