@@ -72,7 +72,7 @@ namespace BankDiba_LIB
         }
         public static bool UbahData(Positions p)
         {
-            string sql = "Update Positions set nama = '" + p.Nama + "', keterangan = '" + p.Keterangan + "', id = '" + p.Id+ "' where id ='" + p.Id + "'";
+            string sql = "Update Positions set nama = '" + p.Nama + "', keterangan = '" + p.Keterangan + "' where id ='" + p.Id + "'";
             int hasil = Koneksi.JalankanPerintahDML(sql);
             if (hasil >= 1) return true;
             return false;
