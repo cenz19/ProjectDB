@@ -58,6 +58,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>db.settings</DependentUpon>
     </Compile>
+    <Compile Include="FormDaftarDeposito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDaftarDeposito.Designer.cs">
+      <DependentUpon>FormDaftarDeposito.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDaftarEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     <Compile Include="TransferForm.Designer.cs">
       <DependentUpon>TransferForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormDaftarDeposito.resx">
+      <DependentUpon>FormDaftarDeposito.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarEmployee.resx">
       <DependentUpon>FormDaftarEmployee.cs</DependentUpon>
     </EmbeddedResource>

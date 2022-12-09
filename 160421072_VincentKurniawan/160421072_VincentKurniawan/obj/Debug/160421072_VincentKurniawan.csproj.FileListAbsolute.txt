@@ -129,3 +129,4 @@ C:\Users\Vincent\Documents\ProjectDb\ProjectDB\160421072_VincentKurniawan\160421
 C:\Users\Vincent\Documents\ProjectDb\ProjectDB\160421072_VincentKurniawan\160421072_VincentKurniawan\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\Vincent\Documents\ProjectDb\ProjectDB\160421072_VincentKurniawan\160421072_VincentKurniawan\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Vincent\Documents\ProjectDb\ProjectDB\160421072_VincentKurniawan\160421072_VincentKurniawan\bin\Debug\MySql.Data.xml
+C:\Users\Vincent\Documents\ProjectDb\ProjectDB\160421072_VincentKurniawan\160421072_VincentKurniawan\obj\Debug\_160421072_VincentKurniawan.FormDaftarDeposito.resources

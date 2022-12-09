@@ -38,10 +38,11 @@ namespace _160421072_VincentKurniawan
             this.penggunaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.karyawanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.posisiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jenisTransaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keluarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inboxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.depositoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,10 +127,18 @@ namespace _160421072_VincentKurniawan
             this.posisiToolStripMenuItem.Text = "Posisi";
             this.posisiToolStripMenuItem.Click += new System.EventHandler(this.posisiToolStripMenuItem_Click);
             // 
+            // inboxToolStripMenuItem
+            // 
+            this.inboxToolStripMenuItem.Name = "inboxToolStripMenuItem";
+            this.inboxToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.inboxToolStripMenuItem.Text = "Inbox";
+            this.inboxToolStripMenuItem.Click += new System.EventHandler(this.inboxToolStripMenuItem_Click);
+            // 
             // transaksiToolStripMenuItem
             // 
             this.transaksiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.jenisTransaksiToolStripMenuItem});
+            this.jenisTransaksiToolStripMenuItem,
+            this.depositoToolStripMenuItem});
             this.transaksiToolStripMenuItem.Name = "transaksiToolStripMenuItem";
             this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.transaksiToolStripMenuItem.Text = "Transaksi";
@@ -137,7 +146,7 @@ namespace _160421072_VincentKurniawan
             // jenisTransaksiToolStripMenuItem
             // 
             this.jenisTransaksiToolStripMenuItem.Name = "jenisTransaksiToolStripMenuItem";
-            this.jenisTransaksiToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.jenisTransaksiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.jenisTransaksiToolStripMenuItem.Text = "Jenis Transaksi";
             this.jenisTransaksiToolStripMenuItem.Click += new System.EventHandler(this.jenisTransaksiToolStripMenuItem_Click);
             // 
@@ -148,12 +157,12 @@ namespace _160421072_VincentKurniawan
             this.keluarToolStripMenuItem.Text = "Keluar";
             this.keluarToolStripMenuItem.Click += new System.EventHandler(this.keluarToolStripMenuItem_Click);
             // 
-            // inboxToolStripMenuItem
+            // depositoToolStripMenuItem
             // 
-            this.inboxToolStripMenuItem.Name = "inboxToolStripMenuItem";
-            this.inboxToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.inboxToolStripMenuItem.Text = "Inbox";
-            this.inboxToolStripMenuItem.Click += new System.EventHandler(this.inboxToolStripMenuItem_Click);
+            this.depositoToolStripMenuItem.Name = "depositoToolStripMenuItem";
+            this.depositoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.depositoToolStripMenuItem.Text = "Deposito";
+            this.depositoToolStripMenuItem.Click += new System.EventHandler(this.depositoToolStripMenuItem_Click);
             // 
             // FormUtama
             // 
@@ -189,6 +198,7 @@ namespace _160421072_VincentKurniawan
         private System.Windows.Forms.ToolStripMenuItem posisiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keluarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inboxToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem depositoToolStripMenuItem;
     }
 }
 

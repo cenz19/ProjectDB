@@ -21,7 +21,6 @@ C:\Users\Vincent\Downloads\BankDiba\BankDiba_LIB\obj\Debug\BankDiba_LIB.dll
 C:\Users\Vincent\Downloads\BankDiba\BankDiba_LIB\obj\Debug\BankDiba_LIB.pdb
 C:\Users\Vincent\Downloads\BankDiba\BankDiba_LIB\bin\Debug\MySql.Data.dll
 C:\Users\Vincent\Downloads\BankDiba\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.AssemblyReference.cache
-C:\Users\Vincent\Documents\ProjectDb\ProjectDB\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.AssemblyReference.cache
 C:\Users\Vincent\Documents\ProjectDb\ProjectDB\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.CoreCompileInputs.cache
 C:\Users\Vincent\Documents\ProjectDb\ProjectDB\BankDiba_LIB\obj\Debug\BankDiba_LIB.dll
 C:\Users\Vincent\Documents\ProjectDb\ProjectDB\BankDiba_LIB\obj\Debug\BankDiba_LIB.pdb

@@ -106,5 +106,21 @@ namespace _160421072_VincentKurniawan
         {
 
         }
+
+        private void depositoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormDaftarDeposito"];
+            if (form == null)
+            {
+                FormDaftarDeposito frm = new FormDaftarDeposito();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            else
+            {
+                form.Show();
+                form.BringToFront();
+            }
+        }
     }
 }
