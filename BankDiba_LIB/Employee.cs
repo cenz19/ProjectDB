@@ -77,6 +77,11 @@ namespace BankDiba_LIB
             }
             return listEmployee;
         }
+
+        public override string ToString()
+        {
+            return Id.ToString();
+        }
         #endregion
     }
 }

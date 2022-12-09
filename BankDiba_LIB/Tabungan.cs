@@ -56,7 +56,7 @@ namespace BankDiba_LIB
             {
                 sql = "select t.*, p.*, e.*, s.*, po.* from tabungan as t " +
                     "left join pengguna as p on t.pengguna_nik = p.nik " +
-                    "inner join verifikator as e on t.verifikator = e.id " +
+                    "inner join employee as e on t.verifikator = e.id " +
                     "left join security_question as s on p.security_question_id = s.id " +
                     "inner join positions as po on e.position_id = po.id";
             }
@@ -64,7 +64,7 @@ namespace BankDiba_LIB
             {
                 sql = "select t.*, p.*, e.*, s.*, po.* from tabungan as t " +
                     "left join pengguna as p on t.pengguna_nik = p.nik " +
-                    "inner join verifikator as e on t.verifikator = e.id " +
+                    "inner join employee as e on t.verifikator = e.id " +
                     "left join security_question as s on p.security_question_id = s.id " +
                     "inner join positions as po on e.position_id = po.id " +
                     "where " + kriteria + " = '" + nilai + "'";

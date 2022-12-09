@@ -40,3 +40,4 @@ C:\Users\Vincent\Documents\ProjectDb\ProjectDB\BankDiba_LIB\bin\Debug\K4os.Hash.
 C:\Users\Vincent\Documents\ProjectDb\ProjectDB\BankDiba_LIB\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\Vincent\Documents\ProjectDb\ProjectDB\BankDiba_LIB\bin\Debug\MySql.Data.xml
 C:\Users\Vincent\Documents\ProjectDb\ProjectDB\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.CopyComplete
+C:\Users\Vincent\Documents\ProjectDb\ProjectDB\BankDiba_LIB\obj\Debug\BankDiba_LIB.csproj.AssemblyReference.cache

@@ -50,7 +50,7 @@ namespace _160421072_VincentKurniawan
 
         private void dataGridViewInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
     }
 }
