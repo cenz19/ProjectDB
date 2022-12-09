@@ -67,7 +67,7 @@ namespace BankDiba_LIB
                     "inner join employee as e on t.verifikator = e.id " +
                     "left join security_question as s on p.security_question_id = s.id " +
                     "inner join positions as po on e.position_id = po.id " +
-                    "where " + kriteria + " = '" + nilai + "'";
+                    "where " + kriteria + " like '%" + nilai + "%'";
             }
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
@@ -86,6 +86,7 @@ namespace BankDiba_LIB
             return listTabungan;
         }
 
+        
         public static bool TambahData(Tabungan t)
         {
             string sql = "insert into tabungan(no_rekening, saldo, keterangan, tgl_buat, tgl_perubahan, pengguna_nik, verifikator) " +
@@ -112,6 +113,21 @@ namespace BankDiba_LIB
             if (hasil >= 1) return true;
             return false;
         }
+
+        public static Tabungan CariTabungan(string nilai)
+        {
+            List<Tabungan> listTabungan = BacaData("no_rekening", nilai);
+            Tabungan t = null;
+            foreach (Tabungan tabungan in listTabungan)
+            {
+                if (tabungan.NoRekening == nilai)
+                {
+                    t = tabungan;
+                }
+            }
+            return t;
+        }
+
         public override string ToString()
         {
             return NoRekening;

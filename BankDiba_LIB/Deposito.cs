@@ -64,22 +64,14 @@ namespace BankDiba_LIB
                     "left join positions as p1 on e1.position_id = p1.id " +
                     "left join employee as e2 on d.verifikator_cair = e2.id " +
                     "left join positions as p2 on e2.position_id = p2.id " + 
-                    "where d." + kriteria + " = '" + nilai + "'";
+                    "where d." + kriteria + " like '%" + nilai + "%'";
             }
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             List<Deposito> listDeposito = new List<Deposito>();
             while (hasil.Read())
             {
                 string tabungan = hasil.GetString(7);
-                List<Tabungan> listTabungan = Tabungan.BacaData("no_rekening", tabungan);
-                Tabungan t = null;
-                foreach(Tabungan tabungans in listTabungan)
-                {
-                    if(tabungans.NoRekening == hasil.GetString(7))
-                    {
-                        t = tabungans;
-                    }
-                }
+                Tabungan t = Tabungan.CariTabungan(tabungan);
                 Positions p1 = new Positions(hasil.GetInt16(27), hasil.GetString(28), hasil.GetString(29));
                 Employee e1 = new Employee(hasil.GetInt16(18), hasil.GetString(19), hasil.GetString(20), p1,
                     hasil.GetString(22), hasil.GetString(23), hasil.GetString(24), hasil.GetDateTime(25), hasil.GetDateTime(26));
