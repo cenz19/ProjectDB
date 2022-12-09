@@ -15,14 +15,14 @@ namespace BankDiba_LIB
         private string status;
         private DateTime tglBuat;
         private DateTime tglPerubahan;
-        private Tabungan noRekening;
+        private Tabungan tabungan;
         private Employee verifikatorBuka;
         private Employee verifikatorCair;
 
-        public Deposito(string id, string jatuhTempo, double nominal, double bunga, string status, DateTime tglBuat, DateTime tglPerubahan, Tabungan noRekening, Employee verifikatorBuka, Employee verifikatorCair)
+        public Deposito(string id, string jatuhTempo, double nominal, double bunga, string status, DateTime tglBuat, DateTime tglPerubahan, Tabungan tabungan, Employee verifikatorBuka, Employee verifikatorCair)
         {
             Id = id;
-            NoRekening = noRekening;
+            Tabungan = tabungan;
             JatuhTempo = jatuhTempo;
             Nominal = nominal;
             Bunga = bunga;
@@ -34,7 +34,7 @@ namespace BankDiba_LIB
         }
 
         public string Id { get => id; set => id = value; }
-        public Tabungan NoRekening { get => noRekening; set => noRekening = value; }
+        public Tabungan Tabungan { get => tabungan; set => tabungan = value; }
         public string JatuhTempo { get => jatuhTempo; set => jatuhTempo = value; }
         public double Nominal { get => nominal; set => nominal = value; }
         public double Bunga { get => bunga; set => bunga = value; }
@@ -70,14 +70,14 @@ namespace BankDiba_LIB
             List<Deposito> listDeposito = new List<Deposito>();
             while (hasil.Read())
             {
-                string noRekening = hasil.GetString(7);
-                List<Tabungan> listTabungan = Tabungan.BacaData("no_rekening", noRekening);
+                string tabungan = hasil.GetString(7);
+                List<Tabungan> listTabungan = Tabungan.BacaData("no_rekening", tabungan);
                 Tabungan t = null;
-                foreach(Tabungan tabungan in listTabungan)
+                foreach(Tabungan tabungans in listTabungan)
                 {
-                    if(tabungan.NoRekening == hasil.GetString(7))
+                    if(tabungans.NoRekening == hasil.GetString(7))
                     {
-                        t = tabungan;
+                        t = tabungans;
                     }
                 }
                 Positions p1 = new Positions(hasil.GetInt16(27), hasil.GetString(28), hasil.GetString(29));
@@ -90,6 +90,36 @@ namespace BankDiba_LIB
                 listDeposito.Add(d);
             }
             return listDeposito;
+        }
+
+        public static bool TambahData(Deposito d)
+        {
+            string sql = "insert into deposito(id_deposito, jatuh_tempo, nominal, bunga, status, tgl_buat, tgl_perubahan, tabungan_no_rekening, verifikator_buka, verifikator_cair) " +
+                "values('" + d.Id + "','" + d.JatuhTempo + "'," + d.Nominal + "," + d.Bunga + ",'" + d.Status + "','" + d.TglBuat.ToString("yyyy-MM-hh HH:mm:ss") + "','" 
+                + d.TglPerubahan.ToString("yyyy-MM-hh HH:mm:ss") + "','" + d.Tabungan.NoRekening + "'," + d.VerifikatorBuka.Id + "," + d.VerifikatorCair.Id + ")";
+            int hasil = Koneksi.JalankanPerintahDML(sql);
+            if (hasil >= 1) return true;
+            return false;
+        }
+
+        public static bool HapusData(Deposito d)
+        {
+            string sql = "delete from deposito where id_deposito = '" + d.Id + "'";
+            int hasil = Koneksi.JalankanPerintahDML(sql);
+            if (hasil >= 1) return true;
+            return false;
+        }
+
+        public static bool UbahData(Deposito d)
+        {
+            string sql = "update deposito set jatuh_tempo = '" + d.JatuhTempo + "', nominal = " + d.Nominal +
+                ", bunga = " + d.Bunga + ", status = '" + d.Status + "', tgl_buat = '" + d.TglBuat.ToString("yyyy-MM-hh HH:mm:ss") +
+                "', tgl_perubahan = '" + d.TglPerubahan.ToString("yyyy-MM-hh HH:mm:ss") + "', tabungan_no_rekening = '" + d.Tabungan.NoRekening +
+                "', verifikator_buka = " + d.verifikatorBuka.Id + ", verifikator_cair = " + d.VerifikatorCair.Id +
+                " where id_deposito = " + d.Id;
+            int hasil = Koneksi.JalankanPerintahDML(sql);
+            if (hasil >= 1) return true;
+            return false;
         }
     }
 }

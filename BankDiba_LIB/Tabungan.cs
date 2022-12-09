@@ -15,9 +15,9 @@ namespace BankDiba_LIB
         private string keterangan;
         private DateTime tglBuat;
         private DateTime tglPerubahan;
-        private Employee employee;
+        private Employee verifikator;
 
-        public Tabungan(string noRekening, Pengguna pengguna, double saldo, string status, string keterangan, DateTime tglBuat, DateTime tglPerubahan, Employee employee)
+        public Tabungan(string noRekening, Pengguna pengguna, double saldo, string status, string keterangan, DateTime tglBuat, DateTime tglPerubahan, Employee verifikator)
         {
             NoRekening = noRekening;
             Pengguna = pengguna;
@@ -26,7 +26,18 @@ namespace BankDiba_LIB
             Keterangan = keterangan;
             TglBuat = tglBuat;
             TglPerubahan = tglPerubahan;
-            Employee = employee;
+            Verifikator = verifikator;
+        }
+        public Tabungan(string noRekening, Pengguna pengguna, double saldo, string status, string keterangan, Employee verifikator)
+        {
+            NoRekening = noRekening;
+            Pengguna = pengguna;
+            Saldo = saldo;
+            Status = status;
+            Keterangan = keterangan;
+            TglBuat = DateTime.Now;
+            TglPerubahan = DateTime.Now;
+            Verifikator = verifikator;
         }
 
         public string NoRekening { get => noRekening; set => noRekening = value; }
@@ -36,7 +47,7 @@ namespace BankDiba_LIB
         public string Keterangan { get => keterangan; set => keterangan = value; }
         public DateTime TglBuat { get => tglBuat; set => tglBuat = value; }
         public DateTime TglPerubahan { get => tglPerubahan; set => tglPerubahan = value; }
-        public Employee Employee { get => employee; set => employee = value; }
+        public Employee Verifikator { get => verifikator; set => verifikator = value; }
 
         public static List<Tabungan> BacaData(string kriteria, string nilai)
         {
@@ -45,7 +56,7 @@ namespace BankDiba_LIB
             {
                 sql = "select t.*, p.*, e.*, s.*, po.* from tabungan as t " +
                     "left join pengguna as p on t.pengguna_nik = p.nik " +
-                    "inner join employee as e on t.verifikator = e.id " +
+                    "inner join verifikator as e on t.verifikator = e.id " +
                     "left join security_question as s on p.security_question_id = s.id " +
                     "inner join positions as po on e.position_id = po.id";
             }
@@ -53,7 +64,7 @@ namespace BankDiba_LIB
             {
                 sql = "select t.*, p.*, e.*, s.*, po.* from tabungan as t " +
                     "left join pengguna as p on t.pengguna_nik = p.nik " +
-                    "inner join employee as e on t.verifikator = e.id " +
+                    "inner join verifikator as e on t.verifikator = e.id " +
                     "left join security_question as s on p.security_question_id = s.id " +
                     "inner join positions as po on e.position_id = po.id " +
                     "where " + kriteria + " = '" + nilai + "'";
@@ -75,6 +86,32 @@ namespace BankDiba_LIB
             return listTabungan;
         }
 
+        public static bool TambahData(Tabungan t)
+        {
+            string sql = "insert into tabungan(no_rekening, saldo, keterangan, tgl_buat, tgl_perubahan, pengguna_nik, verifikator) " +
+                "values('" + t.NoRekening + "'," + 0 + ",'" + t.Keterangan + "','" + t.TglBuat.ToString("yyyy-MM-hh HH:mm:ss") + "','" + 
+                t.TglPerubahan.ToString("yyyy-MM-hh HH:mm:ss") + t.pengguna.Nik + "','" + t.Verifikator.Id + "')";
+            int hasil = Koneksi.JalankanPerintahDML(sql);
+            if (hasil >= 1) return true;
+            return false;
+        }
+        public static bool HapusData(Tabungan t)
+        {
+            string sql = "delete from tabungan where no_rekening = '" + t.NoRekening + "'";
+            int hasil = Koneksi.JalankanPerintahDML(sql);
+            if (hasil >= 1) return true;
+            return false;
+        }
+
+        public static bool UbahData(Tabungan t)
+        {
+            string sql = "update tabungan set saldo = " + t.Saldo + ", status = '" + t.Status + 
+                "', keterangan = '" + t.Keterangan + "', tgl_Perubahan = '" + t.TglPerubahan.ToString("yyyy-MM-hh HH:mm:ss") + "' " +
+                "where no_rekening = " + t.NoRekening;
+            int hasil = Koneksi.JalankanPerintahDML(sql);
+            if (hasil >= 1) return true;
+            return false;
+        }
         public override string ToString()
         {
             return NoRekening;
